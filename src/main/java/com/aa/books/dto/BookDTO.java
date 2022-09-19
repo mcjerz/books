@@ -1,20 +1,23 @@
-package com.aa.books.dtos;
+package com.aa.books.dto;
 
-import com.aa.books.models.BookModel;
-import lombok.Data;
+import com.aa.books.model.BookModel;
 
-@Data
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class BookDTO {
     private int id;
     private String title;
     private String author;
-    private String publisher;
+    private String genre;
     private String isbn;
-    private int pages;
+    private Integer pageCount;
 
-    public BookModel toModel() {return BookModel.of(getTitle(), getAuthor(), getIsbn(), getPages());}
+    public BookModel toModel() {return BookModel.of(getTitle(), getAuthor(), getIsbn(), getPageCount());}
 
-    public BookModel toModel(final int pId) {return BookModel.of(getTitle(), getAuthor(), getIsbn(), getPages());}
+    public BookModel toModel(final int pId) {return BookModel.of(getTitle(), getAuthor(), getIsbn(), getPageCount());}
 
     public static BookDTO of(final BookModel pModel) {
         final BookDTO dto = new BookDTO();
@@ -22,7 +25,7 @@ public class BookDTO {
         dto.setTitle(pModel.getTitle());
         dto.setAuthor(pModel.getAuthor());
         dto.setIsbn(pModel.getIsbn());
-        dto.setPages(pModel.getPages());
+        dto.setPageCount(pModel.getNumberOfPages());
 
         return dto;
     }

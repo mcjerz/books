@@ -1,4 +1,4 @@
-package com.aa.books;
+package com.aa.books.controller;
 
 import com.aa.books.dto.BookDTO;
 import com.aa.books.service.PersistService;
@@ -7,17 +7,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.awt.print.Book;
-
 
 @RestController
 @RequestMapping("/books/v1")
 public class Controller {
     @Autowired
     private PersistService persistService;
-
-
-    @GetMapping("")
 
     @PostMapping("/")
     public BookDTO create(@RequestBody final BookDTO pDTO) {

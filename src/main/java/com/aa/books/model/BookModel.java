@@ -1,4 +1,4 @@
-package com.aa.books.models;
+package com.aa.books.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -12,12 +12,12 @@ public class BookModel {
     private int id;
     private String title;
     private String author;
-    private String publisher;
+    private String genre;
     private String isbn;
-    private int pages;
+    private Integer numberOfPages;
 
     public BookModel toModel() {
-        return BookModel.of(getTitle(),getAuthor(),getIsbn(),getPages());
+        return BookModel.of(getTitle(),getAuthor(),getIsbn(),getNumberOfPages());
     }
 
     public static BookModel of(final String pTitle, final String pAuthor, final String pIsbn, final int pPages)
@@ -27,7 +27,7 @@ public class BookModel {
         book.setTitle(pTitle);
         book.setAuthor(pAuthor);
         book.setIsbn(pIsbn);
-        book.setPages(pPages);
+        book.setNumberOfPages(pPages);
 
         return book;
     }

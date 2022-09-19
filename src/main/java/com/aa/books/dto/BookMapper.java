@@ -1,6 +1,6 @@
-package com.aa.books;
+package com.aa.books.dto;
 
-import com.aa.books.dto.BookDTO;
+
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
